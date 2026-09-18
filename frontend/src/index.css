@@ -1,0 +1,269 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Nebula Design System ── */
+
+:root {
+  color-scheme: dark;
+  --bg-base: #060816;
+  --bg-elevated: rgba(11, 18, 32, 0.9);
+  --panel: rgba(255, 255, 255, 0.05);
+  --panel-strong: rgba(255, 255, 255, 0.08);
+  --border-soft: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.12);
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --accent: #22d3ee;
+  --accent-strong: #6366f1;
+  --accent-warm: #8b5cf6;
+  --shadow-soft: 0 18px 45px rgba(2, 6, 23, 0.42);
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+  --transition-fast: 180ms ease;
+  --transition-base: 220ms ease;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg-base);
+  background-image: radial-gradient(circle at top left, rgba(99, 102, 241, 0.16), transparent 28%),
+    radial-gradient(circle at top right, rgba(34, 211, 238, 0.12), transparent 24%),
+    linear-gradient(135deg, #060816 0%, #080d17 45%, #0b1220 100%);
+  color: var(--text-primary);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 0%, rgba(34, 211, 238, 0.08), transparent 36%);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.28);
+  color: var(--text-primary);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+@layer base {
+  * {
+    @apply border-white/10;
+  }
+
+  body {
+    @apply text-slate-100;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-slate-50 tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply border border-white/[0.08] bg-white/[0.04] shadow-soft backdrop-blur-xl;
+  }
+
+  .glass-panel-hover {
+    @apply transition-all duration-200 hover:border-white/[0.12] hover:bg-white/[0.08];
+  }
+
+  .glass-panel-active {
+    @apply border-white/[0.16] bg-white/[0.10];
+  }
+
+  .nebula-shell {
+    @apply rounded-[1.5rem] border border-white/[0.08] bg-slate-950/60 shadow-soft backdrop-blur-2xl;
+  }
+
+  .nebula-card {
+    @apply rounded-2xl border border-white/[0.08] bg-white/[0.05] shadow-[0_10px_35px_rgba(2,6,23,0.28)] backdrop-blur-xl;
+  }
+
+  .nebula-chip {
+    @apply rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.24em] text-cyan-200;
+  }
+
+  .text-muted {
+    @apply text-slate-400;
+  }
+
+  .text-secondary {
+    @apply text-slate-300;
+  }
+
+  .surface-soft {
+    @apply border border-white/[0.06] bg-white/[0.04];
+  }
+
+  .nebula-input {
+    @apply w-full rounded-xl border border-white/[0.10] bg-white/[0.04] py-3 pl-10 pr-4 text-slate-100 placeholder-slate-500 transition-all duration-200 focus:outline-none focus:border-cyan-400/50 focus:ring-1 focus:ring-cyan-400/40;
+  }
+
+  .nebula-btn {
+    @apply w-full rounded-xl bg-accent-gradient py-3 font-semibold text-white transition-all duration-200 hover:brightness-110 focus:ring-2 focus:ring-cyan-400/50 focus:ring-offset-2 focus:ring-offset-transparent disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .nebula-btn-secondary {
+    @apply inline-block rounded-xl border border-white/[0.10] bg-white/[0.06] px-4 py-2 text-sm text-slate-300 transition-all duration-200 hover:border-white/[0.15] hover:bg-white/[0.10] hover:text-white;
+  }
+
+  .nebula-link {
+    @apply text-sm text-cyan-300 transition-colors duration-200 hover:text-cyan-200;
+  }
+
+  .nebula-badge {
+    @apply inline-flex items-center rounded-full border border-cyan-400/10 bg-cyan-400/20 px-3 py-1 text-xs font-medium text-cyan-200;
+  }
+
+  .nebula-input-icon {
+    @apply absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500;
+  }
+
+  .nebula-label {
+    @apply mb-2 block text-sm font-medium text-slate-300;
+  }
+
+  .nebula-bubble-sent {
+    @apply rounded-2xl rounded-br-md bg-bubble-sent text-white shadow-lg shadow-cyan-500/20;
+  }
+
+  .nebula-bubble-received {
+    @apply rounded-2xl rounded-bl-md border border-white/[0.06] bg-white/[0.06] text-slate-100;
+  }
+
+  .chat-icon-button {
+    @apply flex size-8 items-center justify-center rounded-lg border border-transparent bg-transparent text-slate-400 transition-all duration-200 hover:border-cyan-400/20 hover:bg-cyan-400/[0.07] hover:text-cyan-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/50;
+  }
+}
+
+.premium-scrollbar {
+  scrollbar-color: rgba(148, 163, 184, 0.18) transparent;
+  scrollbar-width: thin;
+}
+
+.premium-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.premium-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.16);
+}
+
+.premium-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.25);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.shimmer-bg {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%, transparent 100%);
+  background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@property --neon-border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.neon-border-orbit {
+  padding: 2px;
+  background: conic-gradient(
+    from var(--neon-border-angle),
+    transparent 0deg 300deg,
+    rgba(34, 211, 238, 0.15) 318deg,
+    rgba(34, 211, 238, 0.9) 338deg,
+    rgba(99, 102, 241, 0.85) 350deg,
+    transparent 360deg
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  filter: drop-shadow(0 0 5px rgba(34, 211, 238, 0.38));
+}
+
+.animate-nebula-border {
+  animation: nebula-border-spin 6s linear infinite;
+}
+
+@keyframes nebula-border-spin {
+  to {
+    --neon-border-angle: 1turn;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-nebula-border {
+    animation: none;
+  }
+
+  .neon-border-orbit {
+    background: linear-gradient(135deg, rgba(34, 211, 238, 0.55), rgba(99, 102, 241, 0.45), rgba(34, 211, 238, 0.18));
+  }
+}
+
+@media (hover: none) {
+  .message-action-trigger {
+    opacity: 0.65;
+  }
+}

@@ -1,4 +1,3 @@
-::: {align="center"}
 # 💬 SecureChat
 
 ### 🔐 Secure • Real-Time • Full-Stack Communication

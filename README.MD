@@ -364,11 +364,13 @@ This project is licensed under the **MIT License**.
 Full-Stack Developer
 
 -   GitHub: https://github.com/rishitiwari-348
+-   LinkedIn: https://www.linkedin.com/in/rishitiwaripro/
+-   Email: rishitiwaripro@gmail.com
 
 ------------------------------------------------------------------------
 
-::: {align="center"}
+
 ### ⭐ If you find SecureChat useful, consider giving the repository a star!
 
 **Built with ❤️ by Rishi Tiwari**
-:::
+

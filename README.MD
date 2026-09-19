@@ -264,20 +264,6 @@ database credentials.**
 
 ------------------------------------------------------------------------
 
-## 🌐 Production
-
-### Frontend
-
-https://secure-chat-app-opal.vercel.app
-
-### Backend
-
-https://securechat-backend-vg43.onrender.com
-
-The production frontend communicates with the Render backend, while
-MongoDB Atlas provides persistent database storage.
-
-------------------------------------------------------------------------
 
 ## 🔒 Security
 
@@ -360,8 +346,6 @@ This project is licensed under the **MIT License**.
 ## 👨‍💻 Author
 
 ### Rishi Tiwari
-
-Full-Stack Developer
 
 -   GitHub: https://github.com/rishitiwari-348
 -   LinkedIn: https://www.linkedin.com/in/rishitiwaripro/

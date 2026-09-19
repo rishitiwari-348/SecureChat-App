@@ -1,153 +1,138 @@
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&height=250&color=gradient&customColorList=12,20,24,30&text=SecureChat&fontAlignY=38&fontSize=56&desc=Production-Ready%20Real-Time%20Messaging%20Platform&descAlignY=58"/>
-
+::: {align="center"}
 # 💬 SecureChat
 
-### Secure • Fast • Real-Time Communication
+### 🔐 Secure • Real-Time • Full-Stack Communication
 
-<p>
+**React • Node.js • Express • MongoDB • Socket.IO • JWT • Cloudinary •
+WebRTC**
 
-<img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react"/>
+🌐 **Live:** https://secure-chat-app-opal.vercel.app\
+📦 **GitHub:** https://github.com/rishitiwari-348/SecureChat-App
+:::
 
-<img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite"/>
+------------------------------------------------------------------------
 
-<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js"/>
+## 📌 About
 
-<img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express"/>
+**SecureChat** is a full-stack real-time communication application built
+with React, Node.js, Express, MongoDB, and Socket.IO.
 
-<img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb"/>
+It provides real-time messaging, authentication, online presence, media
+sharing, voice messages, group communication, and audio/video calling
+through WebRTC.
 
-<img src="https://img.shields.io/badge/Socket.IO-010101?style=for-the-badge&logo=socketdotio"/>
+### Production deployment
 
-<img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens"/>
+-   **Frontend:** Vercel
+-   **Backend:** Render
+-   **Database:** MongoDB Atlas
+-   **Media storage:** Cloudinary
 
-<img src="https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary"/>
+------------------------------------------------------------------------
 
-<img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss"/>
+## ✨ Features
 
-</p>
+### 💬 Messaging
 
-</div>
+-   Real-time one-to-one messaging
+-   Socket.IO powered instant communication
+-   Persistent messages with MongoDB
+-   Online/offline presence
+-   Conversation-based chat
 
----
+### 👥 Communication
 
-# 🚀 Overview
+-   User profiles
+-   Group conversations
+-   Group messaging
+-   Audio/video calling with WebRTC
 
-SecureChat is a production-ready full-stack real-time messaging platform built with **React**, **Node.js**, **Express**, **MongoDB**, and **Socket.IO**.
+### 🎙️ Media
 
-The application provides secure JWT authentication, real-time messaging, online presence detection, cloud-based image sharing, welcome email automation, and a modern responsive interface designed with scalability and clean architecture in mind.
+-   Voice messages
+-   Image sharing
+-   Cloudinary media storage
 
-It demonstrates the technologies commonly used to build modern messaging applications and emphasizes security, performance, and user experience.
+### 🔐 Authentication & Security
 
----
+-   JWT authentication
+-   Cookie-based sessions
+-   Protected API routes
+-   Google OAuth
+-   GitHub OAuth
+-   Environment-variable based secrets
+-   Arcjet API protection
 
-# ✨ Key Features
+### 🎨 Frontend
 
-- 💬 Real-Time Messaging
-- 🔐 JWT Authentication
-- 🟢 Online / Offline Presence
-- 🖼️ Image Sharing with Cloudinary
-- 📧 Welcome Emails with Resend
-- 🛡️ Arcjet API Protection
-- 📱 Fully Responsive UI
-- ⚡ Fast React + Vite Frontend
-- 🌙 Modern Tailwind CSS + DaisyUI Design
-- 🧠 Zustand State Management
-- 🚀 RESTful API Architecture
-- ☁️ MongoDB Data Persistence
+-   React 19
+-   Vite
+-   Tailwind CSS
+-   DaisyUI
+-   Zustand
+-   React Router
+-   Responsive UI
+-   Toast notifications
 
----
-# 🏗️ System Architecture
+------------------------------------------------------------------------
 
-```text
-                    User
-                      │
-                      ▼
-            React + Vite Frontend
-                      │
-                 Axios Requests
-                      │
-      ┌───────────────┴───────────────┐
-      ▼                               ▼
- REST API (Express.js)          Socket.IO Server
-      │                               │
- JWT Authentication          Real-Time Communication
-      │                               │
-      └───────────────┬───────────────┘
-                      ▼
-                 MongoDB Database
-                      │
-      ┌───────────────┼────────────────┐
-      ▼               ▼                ▼
- Cloudinary      Resend Email      Arcjet Security
+## 🏗️ Architecture
+
+``` text
+                         User
+                           │
+                           ▼
+                 React + Vite Frontend
+                       (Vercel)
+                           │
+                    HTTP / WebSocket
+                           │
+              ┌────────────┴────────────┐
+              ▼                         ▼
+        Express REST API           Socket.IO
+              │                  Real-Time Events
+              └────────────┬────────────┘
+                           ▼
+                     MongoDB Atlas
+                           │
+                 ┌─────────┴─────────┐
+                 ▼                   ▼
+             Cloudinary           Arcjet
+           Media Storage       API Protection
+
+                    WebRTC
+                       │
+                       ▼
+                 Audio / Video
+                    Calling
 ```
 
----
+------------------------------------------------------------------------
 
-# ⚡ Real-Time Messaging Flow
+## 🛠️ Technology Stack
 
-```text
-User Login
-     │
-     ▼
-JWT Authentication
-     │
-     ▼
-Socket Connection
-     │
-     ▼
-Send Message
-     │
-     ▼
-Socket.IO Event
-     │
-     ▼
-Receiver Online?
-     │
- ┌───┴────┐
- │        │
-Yes       No
- │        │
- ▼        ▼
-Instant   Store in MongoDB
-Delivery       │
- │             ▼
- ▼       Deliver When Online
-```
+  Layer              Technology
+  ------------------ ------------------------------------------
+  Frontend           React 19, Vite
+  Styling            Tailwind CSS, DaisyUI
+  Routing            React Router
+  State              Zustand
+  Backend            Node.js, Express.js
+  Database           MongoDB, Mongoose
+  Real-Time          Socket.IO
+  Authentication     JWT, Cookies, Google OAuth, GitHub OAuth
+  Media              Cloudinary
+  API Protection     Arcjet
+  Calling            WebRTC
+  Email              Resend
+  Frontend Hosting   Vercel
+  Backend Hosting    Render
 
----
+------------------------------------------------------------------------
 
-# 🔒 Security Features
+## 📂 Project Structure
 
-- 🔐 JWT Authentication
-- 🍪 Secure Cookie-based Sessions
-- 🛡️ Arcjet API Protection
-- 🔑 Environment Variables
-- ☁️ Cloudinary Secure Uploads
-- ✅ Request Validation
-- 🚫 Unauthorized Route Protection
-
----
-
-# ⚙️ Technology Stack
-
-| Layer | Technologies |
-|--------|--------------|
-| Frontend | React, Vite, Tailwind CSS, DaisyUI |
-| Backend | Node.js, Express.js |
-| Database | MongoDB + Mongoose |
-| Authentication | JWT + Cookies |
-| Real-Time | Socket.IO |
-| Image Storage | Cloudinary |
-| Email Service | Resend |
-| State Management | Zustand |
-
----
-
-# 📂 Project Structure
-
-```text
+``` text
 SecureChat-App/
 │
 ├── backend/
@@ -158,8 +143,8 @@ SecureChat-App/
 │   │   ├── routes/
 │   │   ├── lib/
 │   │   └── server.js
-│   │
-│   └── test/
+│   ├── package.json
+│   └── .env.example
 │
 ├── frontend/
 │   ├── src/
@@ -167,173 +152,224 @@ SecureChat-App/
 │   │   ├── pages/
 │   │   ├── store/
 │   │   └── lib/
-│   │
-│   └── public/
+│   ├── public/
+│   ├── package.json
+│   └── .env.example
 │
+├── .gitignore
 └── README.md
 ```
 
----
-# 🚀 Getting Started
+------------------------------------------------------------------------
 
-## Prerequisites
+## 🚀 Getting Started
 
-Before running the project, make sure you have:
+### Prerequisites
 
-- Node.js 18+
-- MongoDB
-- Cloudinary Account
-- Resend API Key
-- Arcjet API Key
+-   Node.js 18+
+-   MongoDB or MongoDB Atlas
+-   Cloudinary account
+-   Arcjet account
+-   Google/GitHub OAuth credentials if OAuth is enabled
 
----
+### Clone
 
-## Clone the Repository
-
-```bash
-git clone https://github.com/Rahul-Baghel01/SecureChat-App.git
+``` bash
+git clone https://github.com/rishitiwari-348/SecureChat-App.git
+cd SecureChat-App
 ```
-
----
-
-## Install Dependencies
 
 ### Backend
 
-```bash
+``` bash
 cd backend
 npm install
+npm run dev
 ```
 
 ### Frontend
 
-```bash
+Open another terminal:
+
+``` bash
 cd frontend
 npm install
-```
-
----
-
-## Start the Backend
-
-```bash
 npm run dev
 ```
 
----
+Frontend:
 
-## Start the Frontend
-
-```bash
-npm run dev
+``` text
+http://localhost:5173
 ```
 
----
+Backend:
 
-# 🔑 Environment Variables
-
-Create a `.env` file inside the **backend** folder.
-
-```env
-PORT=
-MONGO_URI=
-JWT_SECRET=
-
-CLIENT_URL=
-
-RESEND_API_KEY=
-EMAIL_FROM=
-EMAIL_FROM_NAME=
-
-CLOUDINARY_CLOUD_NAME=
-CLOUDINARY_API_KEY=
-CLOUDINARY_API_SECRET=
-
-ARCJET_KEY=
-ARCJET_ENV=
+``` text
+http://localhost:3000
 ```
 
-> **Important:** Never commit your `.env` file or API keys to GitHub.
+------------------------------------------------------------------------
 
----
+## 🔑 Environment Variables
 
-# 📷 Screenshots
+Create `.env` files from the provided `.env.example` files.
 
-## Login Page
+### Backend
 
-> Add `login.png`
+``` env
+PORT=3000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
 
----
+NODE_ENV=development
 
-## Chat Dashboard
+CLIENT_URL=http://localhost:5173
+SERVER_URL=http://localhost:3000
 
-> Add `dashboard.png`
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 
----
+ARCJET_KEY=your_arcjet_key
+ARCJET_ENV=development
 
-## Real-Time Messaging
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+GOOGLE_CALLBACK_URL=http://localhost:3000/api/auth/oauth/google/callback
 
-> Add `chat.png`
+GITHUB_CLIENT_ID=your_github_client_id
+GITHUB_CLIENT_SECRET=your_github_client_secret
+GITHUB_CALLBACK_URL=http://localhost:3000/api/auth/oauth/github/callback
+```
 
----
+Email functionality, when enabled:
 
-## Profile & Settings
+``` env
+RESEND_API_KEY=your_resend_api_key
+EMAIL_FROM=your_sender
+EMAIL_FROM_NAME=your_sender_name
+```
 
-> Add `profile.png`
+### Frontend
 
----
+``` env
+VITE_API_URL=http://localhost:3000
+VITE_TURN_URL=
+VITE_TURN_USERNAME=
+VITE_TURN_CREDENTIAL=
+```
 
-# 📈 Future Roadmap
+**Never commit `.env` files, passwords, API keys, OAuth secrets, or
+database credentials.**
 
-- [x] JWT Authentication
-- [x] Real-Time Messaging
-- [x] Online Presence
-- [x] Cloudinary Image Upload
-- [x] Welcome Email
-- [x] Responsive UI
-- [ ] Message Reactions
-- [ ] Voice Messages
-- [ ] Group Chats
-- [ ] Video Calling
-- [ ] Push Notifications
-- [ ] End-to-End Encryption
+------------------------------------------------------------------------
 
----
+## 🌐 Production
 
-# 🤝 Contributing
+### Frontend
 
-Contributions are welcome!
+https://secure-chat-app-opal.vercel.app
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push your branch
-5. Open a Pull Request
+### Backend
 
----
+https://securechat-backend-vg43.onrender.com
 
-# 🛡️ License
+The production frontend communicates with the Render backend, while
+MongoDB Atlas provides persistent database storage.
+
+------------------------------------------------------------------------
+
+## 🔒 Security
+
+SecureChat uses:
+
+-   JWT authentication
+-   Secure cookie-based sessions
+-   Protected routes
+-   Google and GitHub OAuth
+-   Environment variables for secrets
+-   Arcjet API protection
+-   Cloudinary secure media storage
+-   Gitignored generated voice recordings
+
+------------------------------------------------------------------------
+
+## 📡 WebRTC Calling
+
+SecureChat uses WebRTC for audio/video communication.
+
+Optional TURN configuration:
+
+``` env
+VITE_TURN_URL=
+VITE_TURN_USERNAME=
+VITE_TURN_CREDENTIAL=
+```
+
+A TURN server can improve connectivity for users behind restrictive NATs
+or firewalls.
+
+------------------------------------------------------------------------
+
+## 🧪 Deployment Checklist
+
+-   [x] React/Vite frontend deployed
+-   [x] Node/Express backend deployed
+-   [x] MongoDB Atlas connected
+-   [x] Google OAuth configured
+-   [x] GitHub OAuth configured
+-   [x] Socket.IO production connection
+-   [x] Cloudinary integration
+-   [ ] Production email configuration
+-   [ ] Optional TURN server
+
+------------------------------------------------------------------------
+
+## 🔮 Future Improvements
+
+-   Message reactions
+-   Read receipts
+-   Typing indicators
+-   Push notifications
+-   Message search
+-   Message editing/deletion
+-   Improved WebRTC connectivity
+-   End-to-end encryption
+-   Advanced notification preferences
+
+------------------------------------------------------------------------
+
+## 🤝 Contributing
+
+1.  Fork the repository
+2.  Create a feature branch
+3.  Make your changes
+4.  Test the application
+5.  Commit your changes
+6.  Push the branch
+7.  Open a Pull Request
+
+------------------------------------------------------------------------
+
+## 📄 License
 
 This project is licensed under the **MIT License**.
 
----
+------------------------------------------------------------------------
 
-# 👨‍💻 Author
+## 👨‍💻 Author
 
-## Rahul Baghel
+### Rishi Tiwari
 
-AI & Full Stack Developer
+Full-Stack Developer
 
-- GitHub: https://github.com/Rahul-Baghel01
-- LinkedIn: https://www.linkedin.com/in/rahul-baghel-6694a9343/
-- Email: rahulorai03@gmail.com
+-   GitHub: https://github.com/rishitiwari-348
 
----
+------------------------------------------------------------------------
 
-<div align="center">
+::: {align="center"}
+### ⭐ If you find SecureChat useful, consider giving the repository a star!
 
-## ⭐ If you like this project, please give it a Star!
-
-### Built with ❤️ by Rahul Baghel
-
-</div>
+**Built with ❤️ by Rishi Tiwari**
+:::
